@@ -10,6 +10,7 @@ use App\Status;
 use App\Priority;
 use Auth;
 use DB;
+use App\Role;
 use App\Comments;
 
 class HomeController extends Controller
@@ -125,7 +126,8 @@ class HomeController extends Controller
     public function viewEmployee()
     {
         $employee = User::where('user_role','2')->get();
-        return view('admin.viewEmployee',compact('employee'));
+        $role = Role::all();
+        return view('admin.viewEmployee',compact('employee','role'));
     }
 
     public function userStatus(Request $request)
