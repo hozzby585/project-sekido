@@ -25,7 +25,7 @@
                     @endif
 
                 <p>
-          			<a class="btn btn-primary" href="{{ route('manage_users.create') }}">Add New User</a>
+          			<a class="btn btn-primary" href="{{ route('manage_users.create') }}">Add New Employee</a>
           		</p>
           		<div class="card shadow mb-4">
                 
