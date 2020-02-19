@@ -88,14 +88,11 @@ $(document).ready(function() {
 
         var getUrl = window.location;
         var baseUrl =
-            getUrl.protocol +
-            "/" +
-            getUrl.host +
             "/" +
             getUrl.pathname.split("/")[1] +
             "/" +
             getUrl.pathname.split("/")[2];
-
+        console.log(baseUrl);
         window.location = baseUrl + "/ticket/" + ticketId;
     });
 
