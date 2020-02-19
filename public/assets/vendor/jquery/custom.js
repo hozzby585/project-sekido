@@ -89,7 +89,7 @@ $(document).ready(function() {
         var getUrl = window.location;
         var baseUrl =
             getUrl.protocol +
-            "//" +
+            "/" +
             getUrl.host +
             "/" +
             getUrl.pathname.split("/")[1] +
@@ -146,10 +146,12 @@ $(document).ready(function() {
             .closest("tr")
             .attr("id");
         var rowId = "#" + id;
+
         var user_id = $(rowId)
             .children("td")
             .children(".hidden-id")
             .val();
+        console.log(user_id);
         var user_status = $(rowId)
             .children("td")
             .children(".userStatusButton")
@@ -177,11 +179,9 @@ $(document).ready(function() {
             .change();
 
         $(".categorySelect").on("change", function() {
-            console.log("asdasd");
             $(this)
                 .closest("form")
                 .submit();
-            console.log("asdasd");
         });
     });
     $(".js-example-basic-multiple").select2();
@@ -191,7 +191,6 @@ $(document).ready(function() {
         $(".catSelectChange").val(selected);
     }
     $(".catSelectChange").change(function() {
-        console.log("asdasd");
         localStorage.setItem("selected", $(this).val());
         PostName.submit();
     });

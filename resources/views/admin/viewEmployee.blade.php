@@ -53,11 +53,12 @@
                             <tbody>
                             @foreach($employee as $u)
                                 <tr id="row{{$loop->iteration}}">            
-                                    <td>{{ $loop->iteration }} </td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td><a href="{{url('profile')}}/{{$u->id}}">{{ $u->name }}</a></td>
                                     <td>{{ $u->email }}</td>
                                     <td>{{ $u->company_name }}</td>
                                     <td>
+                                        <input type="hidden" class="hidden-id" value="{{ $u->id }}">
                                         <button class="btn btn-info" data-uname="{{ $u->name }}" data-email="{{ $u->email }}" data-role="{{ $u->user_role }}" data-uid="{{ $u->id }}"  data-toggle="modal" data-target="#EditModal">Edit</button>
                                         <button class="btn btn-danger deleteUserButton" data-uname="{{ $u->name }}?"  data-uid="{{ $u->id }}"  data-toggle="modal" data-target="#DeleteModal">Delete</button>
                                         @if($u->user_status == '0')
